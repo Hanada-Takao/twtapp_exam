@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.all
   end
   def new
     @post = Post.new
   end
   def create
-    @post = Post.create(blog_params)
+    Post.create(blog_params)
     redirect_to new_post_path
   end
   private
