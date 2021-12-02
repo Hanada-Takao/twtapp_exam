@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get '/twts', to: 'twts#index'
+  get 'posts/index'
+  get '/posts', to: 'posts#index'
   get '/stocks', to: 'stocks#index'
+  resources :posts
 end

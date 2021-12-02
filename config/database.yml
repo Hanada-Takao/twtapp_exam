@@ -4,12 +4,12 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 development:
   <<: *default
-  database: twtapp_development
+  database: sample_development
 test:
   <<: *default
-  database: twtapp_test
+  database: sample_test
 production:
   <<: *default
-  database: twtapp_production
-  username: twtapp
-  password: <%= ENV['TWTAPP_DATABASE_PASSWORD'] %>
+  database: sample_production
+  username: sample
+  password: <%= ENV['SAMPLE_DATABASE_PASSWORD'] %>
