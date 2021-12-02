@@ -6,11 +6,18 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def create
-    Post.create(blog_params)
-    redirect_to new_post_path
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path, notice: "Postを投稿しました！"
+    else
+      render :new
+    end
+  end
+  def show
+    @post = Post.find(params[:id])
   end
   private
-  def blog_params
+  def post_params
     params.require(:post).permit(:content)
   end
 end
