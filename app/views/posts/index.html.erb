@@ -6,8 +6,9 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.content %></td>
-    <td><%= link_to '投稿の詳細を確認する', post_path(post.id) %></td>
-    <td><%= link_to "投稿を編集する", edit_post_path(post.id) %></td>
+    <td><%= link_to 'Postの詳細を確認する', post_path(post.id) %></td>
+    <td><%= link_to "Postを編集する", edit_post_path(post.id),data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to 'Postを削除する', post_path(post.id), method: :delete,data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
