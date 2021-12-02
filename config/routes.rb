@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-  get '/posts', to: 'posts#index'
-  get '/stocks', to: 'stocks#index'
-  resources :posts
+  resources :posts do
+    collection do
+      post :confirm
+    end
+  end
 end
